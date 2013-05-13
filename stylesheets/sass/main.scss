@@ -1,0 +1,64 @@
+@mixin line_and_height($height) {
+  height: $height;
+  line-height: $height;
+}
+/* Players list */
+.players-list ul{
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+.player {
+  @include line_and_height(1.5em);
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em;
+  &:last-child {border-bottom: none; }
+  &.live-edit{ background: palegoldenrod; }
+  .number{
+    color: #bbb;
+    display: inline-block;
+    width: 1.5em;
+  }
+}
+
+/* Match log */
+
+.move {
+  padding: 1em;
+  margin: 0 0 1em 0;
+  border: 1px solid #ccc;
+}
+
+/* Field */
+.field{
+  position: relative;
+  width: 270px;
+  height: 500px;
+  background-color: green;
+}
+
+.position-line{
+  line-height: 20px;
+  margin-bottom: 80px;
+  text-align: center;
+  &:last-of-type{ margin-bottom: 0;}
+}
+
+.player-marker{
+  @include line_and_height(50px);
+  background-color: lightblue;
+  display: inline-block;
+  font-size: 130%;
+  margin: 0 15px;
+  text-align: center;
+  width: 30px;
+}
+
+/* Goal */
+.goal{
+  position: absolute;
+  height: 25px;
+  width: 60px;
+  background-color: red;
+  top: 475px;
+  left: 105px;
+}

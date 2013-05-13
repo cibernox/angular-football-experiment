@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="stylesheets/main.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+  <script src="scripts/main.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Match Visualizer</h1>
+    <div class="row">
+
+      <!-- Player groups and roles -->
+
+      <section id="players" class="span3" ng-controller="PlayersCtrl">
+        <article class="players-list" ng-repeat="playerList in playersLists">
+          <h3>
+            {{playerList.name}}
+            <small>
+              {{playerList.size()}}
+              <i ng-show="playerList.isFull()">Full</i>
+            </small>
+          </h3>
+          <ul class="unstyled">
+            <li class="player" ng-repeat="player in playerList.players">
+              <span class="number">{{player.number}}</span>
+              <span class="name">{{player.fullName()}}</span>
+              <span class="pull-right">
+                <a href="#" ng-click="deletePlayer()"><i class="icon-trash"></i></a>
+              </span>
+            </li>
+            <li class="player live-edit" ng-show="$first && (playerFullName || playerNumber) && !playerList.isFull()">
+              <span class="number">{{playerNumber}}</span>
+              <span class="name">{{playerFullName}}</span>
+            </li>
+          </ul>
+        </article>
+        <form ng-hide="allListsFull()" ng-submit="addPlayer()">
+          <label>Nombre</label>
+          <input type="text" placeholder="Player Name" ng-model="playerFullName">
+          <label>Dorsal</label>
+          <input type="text" ng-model="playerNumber">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
+      </section>
+
+      <!-- Match moves and events -->
+
+      <section id="match-log" class="span6" ng-controller="MovesCtrl">
+        <ul class="moves-list unstyled">
+          <li class="move" ng-repeat="move in moves">
+            <span class="time muted">{{move.time}}</span>
+            <span class="description">{{move.description}}</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Alineation -->
+
+      <section id="alineation" class="span3">
+        <div class="field">
+          <div class="position-line goalkeeper">
+            <article class="player-marker">11</article>
+          </div>
+          <div class="position-line defense">
+            <article class="player-marker">7</article>
+            <article class="player-marker">14</article>
+            <article class="player-marker">4</article>
+            <article class="player-marker">2</article>
+          </div>
+          <div class="position-line middle">
+            <article class="player-marker">16</article>
+            <article class="player-marker">12</article>
+            <article class="player-marker">10</article>
+            <article class="player-marker">15</article>
+          </div>
+          <div class="position-line attack">
+            <article class="player-marker">8</article>
+            <article class="player-marker">9</article>
+          </div>
+          <article class="goal"></article>
+    </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
