@@ -11,11 +11,9 @@
 <body>
   <div class="container">
     <h1 class="text-center">Match Visualizer</h1>
-    <div class="row">
-
+    <div class="row" ng-controller="TeamCtrl">
       <!-- Player groups and roles -->
-
-      <section id="players" class="span3" ng-controller="PlayersCtrl">
+      <section id="players" class="span3">
         <article class="players-list" ng-repeat="playerList in playersLists">
           <h3>
             {{playerList.name}}
@@ -25,7 +23,7 @@
             </small>
           </h3>
           <ul class="unstyled">
-            <li class="player" ng-repeat="player in playerList.players">
+            <li class="player" ng-repeat="player in playerList.players" ng-mouseenter="player.hovered=true" ng-mouseleave="player.hovered=false">
               <span class="number">{{player.number}}</span>
               <span class="name">{{player.fullName()}}</span>
               <span class="actions pull-right">
@@ -60,26 +58,26 @@
 
       <!-- Alineation -->
 
-      <section id="alineation" class="span3" ng-controller="PlayersCtrl">
+      <section id="alineation" class="span3">
         <div class="field" ng-init="lineUp=playersLists[0].players">
           <div class="position-line goalkeeper">
-            <article class="player-marker">{{lineUp[0].number}}</article>
+            <article ng-class="{highlighted: lineUp[0].hovered}" class="player-marker">{{lineUp[0].number}}</article>
           </div>
           <div class="position-line defense">
-            <article class="player-marker">{{lineUp[1].number}}</article>
-            <article class="player-marker">{{lineUp[2].number}}</article>
-            <article class="player-marker">{{lineUp[3].number}}</article>
-            <article class="player-marker">{{lineUp[4].number}}</article>
+            <article ng-class="{highlighted: lineUp[1].hovered}" class="player-marker">{{lineUp[1].number}}</article>
+            <article ng-class="{highlighted: lineUp[2].hovered}" class="player-marker">{{lineUp[2].number}}</article>
+            <article ng-class="{highlighted: lineUp[3].hovered}" class="player-marker">{{lineUp[3].number}}</article>
+            <article ng-class="{highlighted: lineUp[4].hovered}" class="player-marker">{{lineUp[4].number}}</article>
           </div>
           <div class="position-line middle">
-            <article class="player-marker">{{lineUp[5].number}}</article>
-            <article class="player-marker">{{lineUp[6].number}}</article>
-            <article class="player-marker">{{lineUp[7].number}}</article>
-            <article class="player-marker">{{lineUp[8].number}}</article>
+            <article ng-class="{highlighted: lineUp[5].hovered}" class="player-marker">{{lineUp[5].number}}</article>
+            <article ng-class="{highlighted: lineUp[6].hovered}" class="player-marker">{{lineUp[6].number}}</article>
+            <article ng-class="{highlighted: lineUp[7].hovered}" class="player-marker">{{lineUp[7].number}}</article>
+            <article ng-class="{highlighted: lineUp[8].hovered}" class="player-marker">{{lineUp[8].number}}</article>
           </div>
           <div class="position-line attack">
-            <article class="player-marker">{{lineUp[9].number}}</article>
-            <article class="player-marker">{{lineUp[10].number}}</article>
+            <article ng-class="{highlighted: lineUp[9].hovered}" class="player-marker">{{lineUp[9].number}}</article>
+            <article ng-class="{highlighted: lineUp[10].hovered}" class="player-marker">{{lineUp[10].number}}</article>
           </div>
           <article class="goal"></article>
     </div>

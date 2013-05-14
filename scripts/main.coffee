@@ -44,15 +44,11 @@ class PlayersList
 # Here starts the angular JS part of the code.
 # All the lines above are models in plain old javascript to encapsulate
 # small methods like isFull() for lists or fullName() for players.
-PlayersCtrl = ($scope) ->
+TeamCtrl = ($scope) ->
   $scope.playersLists = [
     new PlayersList("Starting Players", 6, startingPlayersJson.map((el) -> new Player(el))),
     new PlayersList("Substitute Players", 4, substitutePlayersJson.map((el) -> new Player(el)))
   ]
-
-  $scope.setHovered = ->
-    debugger
-    @player.hovered = true
 
   $scope.allListsFull = ->
     $scope.playersLists.every (list) -> list.isFull()

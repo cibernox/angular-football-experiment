@@ -45,12 +45,12 @@ Features already implemented:
   to the first list, a live-preview (in yellow) of that player displayed.
   Once the form is submited the live preview is replaced by the appended player.
   The second list don't has this behavior. It's deliberate.
+* When a Starting Player is hovered with the mouse, its position in the field is highlighted.
 
 TODO:
 
 * Sort players by name of number
 * Filter/search players
 * Move players between lists with drag and drop.
-* When a Starting Player is hovered with the mouse, its position in the field is highlighted.
 
 
