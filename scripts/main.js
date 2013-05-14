@@ -45,6 +45,8 @@ Player = (function() {
 
   Player.prototype.number = null;
 
+  Player.prototype.hovered = false;
+
   function Player() {
     var args, json, nameComponents;
 
@@ -103,6 +105,9 @@ PlayersCtrl = function($scope) {
       return new Player(el);
     }))
   ];
+  $scope.setHovered = function() {
+    return this.player.hovered = true;
+  };
   $scope.allListsFull = function() {
     return $scope.playersLists.every(function(list) {
       return list.isFull();

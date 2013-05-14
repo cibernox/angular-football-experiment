@@ -28,7 +28,7 @@
             <li class="player" ng-repeat="player in playerList.players">
               <span class="number">{{player.number}}</span>
               <span class="name">{{player.fullName()}}</span>
-              <span class="pull-right">
+              <span class="actions pull-right">
                 <a href="#" ng-click="deletePlayer()"><i class="icon-trash"></i></a>
               </span>
             </li>
@@ -60,26 +60,26 @@
 
       <!-- Alineation -->
 
-      <section id="alineation" class="span3">
-        <div class="field">
+      <section id="alineation" class="span3" ng-controller="PlayersCtrl">
+        <div class="field" ng-init="lineUp=playersLists[0].players">
           <div class="position-line goalkeeper">
-            <article class="player-marker">11</article>
+            <article class="player-marker">{{lineUp[0].number}}</article>
           </div>
           <div class="position-line defense">
-            <article class="player-marker">7</article>
-            <article class="player-marker">14</article>
-            <article class="player-marker">4</article>
-            <article class="player-marker">2</article>
+            <article class="player-marker">{{lineUp[1].number}}</article>
+            <article class="player-marker">{{lineUp[2].number}}</article>
+            <article class="player-marker">{{lineUp[3].number}}</article>
+            <article class="player-marker">{{lineUp[4].number}}</article>
           </div>
           <div class="position-line middle">
-            <article class="player-marker">16</article>
-            <article class="player-marker">12</article>
-            <article class="player-marker">10</article>
-            <article class="player-marker">15</article>
+            <article class="player-marker">{{lineUp[5].number}}</article>
+            <article class="player-marker">{{lineUp[6].number}}</article>
+            <article class="player-marker">{{lineUp[7].number}}</article>
+            <article class="player-marker">{{lineUp[8].number}}</article>
           </div>
           <div class="position-line attack">
-            <article class="player-marker">8</article>
-            <article class="player-marker">9</article>
+            <article class="player-marker">{{lineUp[9].number}}</article>
+            <article class="player-marker">{{lineUp[10].number}}</article>
           </div>
           <article class="goal"></article>
     </div>

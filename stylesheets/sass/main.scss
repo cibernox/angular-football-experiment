@@ -1,17 +1,21 @@
+$player-background-color: #eee;
+$gray-border-color: #ccc;
 @mixin line_and_height($height) {
   height: $height;
   line-height: $height;
 }
+@mixin bordered{ border: 1px solid $gray-border-color; }
 /* Players list */
 .players-list ul{
-  background-color: #eee;
-  border: 1px solid #ccc;
+  @include bordered;
+  background-color: $player-background-color;
 }
 .player {
   @include line_and_height(1.5em);
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $gray-border-color;
   padding: 0.5em;
   &:last-child {border-bottom: none; }
+  &:hover{ background-color: lighten($player-background-color, 10%); };
   &.live-edit{ background: palegoldenrod; }
   .number{
     color: #bbb;
@@ -25,7 +29,7 @@
 .move {
   padding: 1em;
   margin: 0 0 1em 0;
-  border: 1px solid #ccc;
+  @include bordered;
 }
 
 /* Field */
@@ -51,6 +55,7 @@
   margin: 0 15px;
   text-align: center;
   width: 30px;
+  &.highlighted{ background: red; }
 }
 
 /* Goal */

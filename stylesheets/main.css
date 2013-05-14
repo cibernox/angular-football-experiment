@@ -1,15 +1,17 @@
 /* Players list */
 .players-list ul {
-  background-color: #eee;
-  border: 1px solid #ccc; }
+  border: 1px solid #cccccc;
+  background-color: #eeeeee; }
 
 .player {
   height: 1.5em;
   line-height: 1.5em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
   padding: 0.5em; }
   .player:last-child {
     border-bottom: none; }
+  .player:hover {
+    background-color: white; }
   .player.live-edit {
     background: palegoldenrod; }
   .player .number {
@@ -21,7 +23,7 @@
 .move {
   padding: 1em;
   margin: 0 0 1em 0;
-  border: 1px solid #ccc; }
+  border: 1px solid #cccccc; }
 
 /* Field */
 .field {
@@ -46,6 +48,8 @@
   margin: 0 15px;
   text-align: center;
   width: 30px; }
+  .player-marker.highlighted {
+    background: red; }
 
 /* Goal */
 .goal {

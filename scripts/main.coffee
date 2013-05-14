@@ -19,6 +19,7 @@ class Player
   firstName: null
   lastName:  null
   number:    null
+  hovered:   false
   constructor: (args...) ->
     if args.length is 1                      # Receives a json object
       json       = args[0]
@@ -49,6 +50,10 @@ PlayersCtrl = ($scope) ->
     new PlayersList("Substitute Players", 4, substitutePlayersJson.map((el) -> new Player(el)))
   ]
 
+  $scope.setHovered = ->
+    debugger
+    @player.hovered = true
+
   $scope.allListsFull = ->
     $scope.playersLists.every (list) -> list.isFull()
 
@@ -68,7 +73,6 @@ PlayersCtrl = ($scope) ->
       index = playersList.players.indexOf(@player)
       if index > -1
         playersList.players.splice(index, 1)
-
 
 MovesCtrl = ($scope) ->
   $scope.moves = [
