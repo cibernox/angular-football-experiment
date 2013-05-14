@@ -26,10 +26,10 @@ Specification/Restrictions:
 * The last list (Substitute players) stores up to 4 players.
 * Each player in the list has a link to delete it.
 * Each player has firstName, lastName and a number.
-* There if a form to add more players, with a field for the fullName
+* There is a form to add more players, with a field for the fullName
   and another field for the number
-* The application also has a log with the laters moves of the match
-  and a field with a 4-4-2 alineation. Not used at all right now.
+* The application also has a log with the latest moves of the match
+  and a field with a 4-4-2 lineup. Not used at all right now.
 
 Features already implemented:
 
@@ -44,6 +44,7 @@ Features already implemented:
 * While you type the fullName or number of a new player that is going to be appended
   to the first list, a live-preview (in yellow) of that player displayed.
   Once the form is submited the live preview is replaced by the appended player.
+  The second list don't has this behavior. It's deliberate.
 
 TODO:
 
