@@ -5,12 +5,13 @@ with very few lines of code.
 I don't even miss jQuery at all!!
 
 # Tools
-Angular 1.05 is loaded from a CDN
-Bootstrap stylesheets are also loaded from a CDN
-No jquery. Just plain old JS.
-The stylesheets are written in sass.
-The JS is written with coffescript.
-No real persitence, data is loaded from some hardcoded json.
+
+* Angular 1.05 is loaded from a CDN
+* Bootstrap stylesheets are also loaded from a CDN
+* No jquery. Just plain old JS.
+* The stylesheets are written in sass.
+* The JS is written with coffescript.
+* No real persitence, data is loaded from some hardcoded json.
 
 # Description of the app and its features
 
