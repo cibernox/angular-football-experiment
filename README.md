@@ -19,7 +19,7 @@ Specification/Restrictions:
 
 * At the begining you have 2 list of players.
   The first has the Starting Players, initialized with 4 players.
-  The second has the substite players, initialized with 3 players.
+  The second has the substitute players, initialized with 3 players.
 * Each list has next to its title a small counter with the number of
   players that contains.
 * The first list (Starting players) stores up to 7 players.
@@ -28,6 +28,8 @@ Specification/Restrictions:
 * Each player has firstName, lastName and a number.
 * There if a form to add more players, with a field for the fullName
   and another field for the number
+* The application also has a log with the laters moves of the match
+  and a field with a 4-4-2 alineation. Not used at all right now.
 
 Features already implemented:
 
